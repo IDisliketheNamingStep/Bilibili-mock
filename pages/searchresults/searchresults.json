@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "search-result-show-video-unit": "/components/search-result-show-video-unit/search-result-show-video-unit",
+    "search-result-up-unit": "/components/search-result-up-unit/search-result-up-unit",
+    "bangumi-show-unit": "/components/bangumi-show-unit/bangumi-show-unit",
+    "pgc-show-unit": "/components/pgc-show-unit/pgc-show-unit"
+  }
+}

@@ -1,0 +1,22 @@
+<!--pages/movie-animate/movie-animate.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="detailWrap">
+  <self-tabbar />
+  <scroll-view scroll-top="{{scrollTop}}" bind:scroll='handleScrollViewScroll' scroll-y="true" style="height: 100%;" bindscrolltolower="handleReachBottom">
+    <!-- 回到顶部 -->
+    <topHomeSearch wx:if='{{toTOPshowMark}}' bind:scrollToTop='scrollToTop' />
+    <!-- 视频容器 -->
+    <video class="videoPlayerWrap" src="{{mainInfo.movieURL.result.durl[0].url}}"
+    controls danmu-list="{{danmuList}}" enable-danmu danmu-btn auto-pause-if-navigate>
+    </video>
+    <!-- 视频图片及信息 -->
+    <movie-animate-titlepic videoInfo='{{mainInfo.videoInfo}}' />
+    <text class="relatedtitle">相关视频：</text>
+    <!-- 推荐视频 -->
+    <movie-animate-recoms wx:for='{{recomList}}' wx:key='{{index}}' recomInfo='{{item}}' />
+    <!-- 用户评论 -->
+    <detail-comments commentList='{{commentList}}' commentsNum='{{commentsNum}}' />
+    <view class="detailFooter">沪ICP备13002172号-3 bilibili.com © 2009-2019</view>
+  </scroll-view>
+</view>
+

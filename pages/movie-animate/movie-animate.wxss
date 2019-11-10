@@ -1,0 +1,28 @@
+/* pages/movie-animate/movie-animate.wxss */
+.detailWrap {
+  position: fixed;
+  top: 0;
+  bottom: 98rpx;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+}
+/* 设置视频播放器满屏 */
+.videoPlayerWrap {
+  width: 100%;
+}
+/* 脚注 */
+.detailFooter {
+  width: 100%;
+  display: inline-block;
+  color: #999999;
+  font-size: 12px;
+  text-align: center;
+  margin: 32rpx auto 160rpx;
+}
+.relatedtitle {
+  display: block;
+  padding-top: 10rpx;
+  margin: 30rpx;
+  border-top: 1px solid #EEEEEE;
+}

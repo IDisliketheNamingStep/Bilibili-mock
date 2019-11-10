@@ -1,0 +1,57 @@
+var playFormat = function (playNum) {
+  playNum = parseInt(playNum)
+  if (playNum < 10000) {
+    return playNum
+  }
+    playNum = playNum / 10000
+  return playNum.toFixed(1) + '万';
+}
+module.exports.playFormat = playFormat;
+
+var durationFormat = function (duration) {
+  duration /= 60
+  return duration.toFixed(2)
+}
+module.exports.durationFormat = durationFormat;
+
+// createdTimeFormat
+var createdTimeFormat = function (createdTime) {
+  if(!createdTime) {
+    return createdTime
+  }
+  return createdTime.slice(5,10)
+}
+module.exports.createdTimeFormat = createdTimeFormat;
+
+
+var dateFormat = function (time) {
+  var t = getDate(time)
+  var m = t.getMonth() + 1
+  var d = t.getDay()
+  return m + '-' + d;
+}
+module.exports.dateFormat = dateFormat;
+
+var miniteToHourFormat = function (dutime) {
+  if(dutime) {
+    switch (dutime.length) {
+      case 3: {
+        return '00:0' + dutime[0] + ':0' + dutime[2]
+      }
+      case 4: {
+        return '00:0' + dutime
+      }
+      case 5: {
+        return '00:' + dutime
+      }
+      case 7: {
+        return '0' + dutime
+      }
+      default: return dutime
+    }
+  } else {
+    return dutime
+  }
+  
+}
+module.exports.miniteToHourFormat = miniteToHourFormat;

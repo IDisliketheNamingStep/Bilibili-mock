@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "movie-animate-titlepic": "/components/movie-animate-titlepic/movie-animate-titlepic",
+    "movie-animate-recoms": "/components//movie-animate-recoms/movie-animate-recoms"
+  }
+}

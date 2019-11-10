@@ -1,0 +1,17 @@
+<!--components/search-result-up-unit/search-result-up-unit.wxml-->
+<view catchtap="handle_NavTo_UPpage" class="search-result-up-unit">
+  <view class="UPpicBox">
+    <image class="UPupic" mode="scaleToFill" style="" src="{{UPinfo.upic}}"></image>
+  </view>
+  <view class="unitRight">
+    <view style="color:#212121;font-size:26rpx">{{UPinfo.uname}}</view>
+    <view class="unitRightBottom">
+      <view style="display:flex">
+        <text class="fans" >粉丝：{{UPinfo.fans}}</text>
+        <text class="vNum" >视频：{{UPinfo.videos}}</text>
+      </view>
+      <view class="upSignature" >{{UPinfo.usign}}</view>
+    </view>
+  </view>
+</view>
+

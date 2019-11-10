@@ -1,0 +1,49 @@
+/* pages/search-results/search-results.wxss */
+.searchresultsWrap {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 98rpx;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+}
+/* 搜索类型及排序类型切换 */
+.searchTypeWrap, .orderTypeWrap {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15rpx 0;
+  font-size: 26rpx;
+  color: #757575;
+  background-color: white;
+}
+.orderTypeWrap {
+  background-color: #F9F9F9;
+}
+.searchTypeWrap view, .searchTypeWrap text, .orderTypeWrap view, .orderTypeWrap text {
+  padding: 0 8rpx 12rpx;
+}
+/* 激活搜索类型及排序类型样式 */
+.activeItem {
+  color: #FF7299;
+}
+.searchTypeItem.activeItem {
+  border-bottom: 4rpx solid #FF7299;
+}
+/* 搜索结果展示区 */
+.showVideos, .showUs {
+  background-color: #F4F4F4;
+}
+/* 加载中文字 */
+.loadingTips {
+  color: #999999;
+  font-size: 24rpx;
+  text-align: center;
+  padding: 20rpx;
+}
+.notFound {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: #F4F4F4;
+}

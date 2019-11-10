@@ -1,0 +1,45 @@
+/* components/search-result-up-unit/search-result-up-unit.wxss */
+.search-result-up-unit {
+  display: flex;
+  padding: 18rpx 20rpx;
+}
+.UPpicBox {
+  width:120rpx;
+  height:120rpx;
+}
+.UPupic {
+  width:120rpx;
+  height:120rpx;
+  border-radius:50%;
+}
+/* 单元右边 */
+.unitRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20rpx;
+  color: #999999;
+}
+.fans {
+  margin-right:80rpx;
+  font-size:24rpx;
+  line-height:36rpx;
+}
+.vNum {
+  font-size:24rpx;
+  line-height:36rpx;
+}
+.upSignature {
+  display: block;
+  width: 100%;
+  font-size:24rpx;
+  line-height:36rpx;
+  /* 超过两行显示省略号 */
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  /* 超过两行显示省略号 */
+}

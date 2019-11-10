@@ -1,0 +1,55 @@
+/* components/search-result-show-video-unit/search-result-show-video-unit.wxss */
+.search-result-show-video-unit {
+  display: flex;
+  padding: 18rpx 20rpx;
+}
+/* 单元左边 */
+.unitLeft {
+  position: relative;
+}
+.videoDuration {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8rpx;
+  padding: 0 8rpx;
+  right: 8rpx;
+  bottom: 16rpx;
+  color: white;
+  font-size: 24rpx;
+  line-height: 26rpx;
+  position: absolute;
+}
+/* 单元右边 */
+.unitRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20rpx;
+  color: #999999;
+}
+/* 视频名称 */
+.videoTitle {
+  color: #212121;
+  font-size: 26rpx;
+
+  /* 超过两行显示省略号 */
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  /* 超过两行显示省略号 */
+}
+/* 小图标 */
+.unitIcon {
+  position: relative;
+  top: 2rpx;
+  width: 28rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+.playandreview {
+  display: flex;
+}
+.upposter text, .playandreview text {
+  font-size: 24rpx;
+}

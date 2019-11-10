@@ -1,0 +1,25 @@
+<!--components/pgc-show-unit/pgc-show-unit.wxml-->
+<view catchtap="handleNavToMovieanime" style="" class="pgc-show-unit">
+  <!-- 左侧电影封面 -->
+  <view class="pgcCoverBox">
+    <image class="pgcCoverImg" style="" src="{{pgcInfo.cover}}"></image>
+  </view>
+  <!-- 右侧电影描述 -->
+  <view style="" class="unitRight">
+    <!-- 分类电影及3D眼睛图标 -->
+    <view style="display:flex" class="catType">
+      <image style="width:38rpx;height:38rpx;display:block;margin-right:20rpx;" 
+      src="/assets/image/movie.png"></image><text style="color:#212121">电影</text>
+    </view>
+    <view class="movieDesc">
+      <!-- 电影标题 -->
+      <view style="color:#212121;font-size:28rpx;margin-bottom:10rpx;">{{pgcInfo.title}}</view>
+      <!-- 拍摄地区 -->
+      <view>地区：{{pgcInfo.area}}</view>
+      <!-- 导演及编剧 -->
+      <view style="overflow:hidden;white-space:nowrap" class="">{{pgcInfo.staff}}</view>
+      <!-- 主演们 -->
+      <view>演员：{{pgcInfo.actors}}</view>
+    </view>
+  </view>
+</view>

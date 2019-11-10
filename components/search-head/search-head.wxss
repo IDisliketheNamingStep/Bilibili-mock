@@ -1,0 +1,34 @@
+/* components/search-head/search-head.wxss */
+.searchPageHead {
+  background-color: white;
+  padding: 10rpx 0 10rpx;
+  display: flex;
+  align-items: center;
+}
+/* 搜索头左边 */
+.searchLeft {
+  border-radius: 8rpx;
+  margin-left: 30rpx;
+  background-color: #F4F4F4;
+  flex: 1;
+  position: relative;
+}
+/* 搜索放大镜 */
+.searchBGP {
+  left: 10rpx;
+  top: 13rpx;
+  position: absolute;
+  width: 44rpx;
+  height: 44rpx;
+}
+/* 输入框 */
+.inputWrap {
+  margin-left: 66rpx;
+  font-size: 26rpx;
+  padding: 15rpx 0;
+}
+/* 搜索头，取消按钮 */
+.searchPageHead text {
+  color: #FB7299;
+  padding: 0 30rpx;
+}

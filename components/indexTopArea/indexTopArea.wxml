@@ -1,0 +1,3 @@
+<!--components/indexTopArea/indexTopArea.wxml-->
+<!-- <text>components/indexTopArea/indexTopArea.wxml</text> -->
+<image mode="widthFix" src="/assets/image/Btop.png" />

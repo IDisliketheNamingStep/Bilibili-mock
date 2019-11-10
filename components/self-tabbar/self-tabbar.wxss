@@ -1,0 +1,21 @@
+/* components/self-tabbar/self-tabbar.wxss */
+.self-tabbar-Box {
+  z-index: 9999;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  height: 96rpx;
+  width: 100%;
+  border-top: 2rpx solid #D5D5D5;
+  display: flex;
+  justify-content: space-evenly;
+}
+.tabImgBox {
+  flex: 1;
+}
+.tabImg {
+  width: 76rpx;
+  height: 76rpx;
+  display: block;
+  margin: 10rpx auto 0
+}

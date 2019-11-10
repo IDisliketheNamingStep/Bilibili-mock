@@ -1,0 +1,17 @@
+<!--components/recom-related/recom-related.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="recomWrap">
+  <view catchtap="handleNavToDetail" data-videoInfo="{{item}}" class="recomItem" 
+        wx:for='{{recomList}}' wx:key='{{index}}'>
+    <view class="imgAndDesc">
+      <image class="recomImg" src="{{item.pic}}"></image>
+      <view class="videoDesc">
+        <text>播放:{{!showDuration ? format.playFormat(item.play) : format.playFormat(item.stat.view)}}</text>
+        <text>评论:{{!showDuration ? format.playFormat(item.video_review) : format.playFormat(item.stat.danmaku)}}</text>
+        <text wx:if='{{showDuration}}' class="v-duration">{{format.durationFormat(item.duration)}}</text>
+      </view>
+    </view>
+    
+    <text class="recomTitle">{{item.title}}</text>
+  </view>
+</view>

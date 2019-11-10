@@ -1,0 +1,35 @@
+<!--components/search-result-show-video-unit/search-result-show-video-unit.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="search-result-show-video-unit">
+  <!-- 左侧封面及时长 -->
+  <view class="unitLeft">
+    <image style="width:234rpx;height:146rpx;border-radius:15rpx" src="{{videoInfo.pic}}" />
+    <text class="videoDuration">{{format.miniteToHourFormat(videoInfo.duration)}}</text>
+  </view>
+  <!-- 右侧标题及描述 -->
+  <view class="unitRight">
+    <!-- 视频标题 -->
+    <view class="videoTitle">{{videoInfo.title}}</view>
+    <view class="videoDesc">
+      <!-- UP主 -->
+      <view class="upposter">
+        <image class="unitIcon" src="/assets/image/ico_up.png" />
+        <text>{{videoInfo.author}}</text>
+      </view>
+      <!-- 播放量及弹幕 -->
+      <view class="playandreview">
+        <!-- 播放量 -->
+        <view style="margin-right:40rpx">
+          <image class="unitIcon" src="/assets/image/ico_play.png" />
+          <text>{{format.playFormat(videoInfo.play)}}</text>
+        </view>
+        <!-- 弹幕量 -->
+        <view>
+          <image class="unitIcon" src="/assets/image/ico_danmu.png" />
+          <text>{{format.playFormat(videoInfo.video_review)}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+</view>

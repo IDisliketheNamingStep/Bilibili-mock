@@ -1,0 +1,30 @@
+<!--pages/detail/detail.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="detailWrap">
+  <self-tabbar />
+  <scroll-view scroll-top="{{scrollTop}}" bind:scroll='handleScrollViewScroll' scroll-y="true" style="height: 100%;" bindscrolltolower="handleReachBottom">
+    <!-- 回到顶部 -->
+    <topHomeSearch wx:if='{{toTOPshowMark}}' bind:scrollToTop='scrollToTop' />
+    <!-- 视频容器 -->
+    <video class="videoPlayerWrap" src="{{videoURL}}"
+    controls danmu-list="{{danmuList}}" enable-danmu danmu-btn auto-pause-if-navigate>
+    </video>
+    <!-- 视频底下的文字 -->
+    <view class="beneathVideo">
+      <!-- 视频标题 -->
+      <text class="videoTitle">{{vdieoInfo.title}}</text>
+      <!-- UP主昵称 //  视频播放量 // 评论量 -->
+      <view wx:if='{{vdieoInfo.owner.name || vdieoInfo.author}}' class="postInfoWrap">
+        <text class="postAuthor">{{vdieoInfo.owner.name || vdieoInfo.author}}</text>
+        <text>{{vdieoInfo.stat.view ? format.playFormat(vdieoInfo.stat.view) : format.playFormat(vdieoInfo.play)}}次观看</text>
+        <text>{{vdieoInfo.stat.danmaku ? format.playFormat(vdieoInfo.stat.danmaku) : format.playFormat(vdieoInfo.video_review)}}弹幕</text>
+        <text>{{vdieoInfo.stat.reply || vdieoInfo.comment || vdieoInfo.review}}评论</text>
+        <text>{{vdieoInfo.ctime ? format.dateFormat(vdieoInfo.ctime) : format.createdTimeFormat(vdieoInfo.created)}}</text>
+      </view>
+    </view>
+    <text class="relatedtitle">相关视频：</text>
+    <recom-related showDuration='{{true}}' recomList='{{relatedList}}'/>
+    <detail-comments commentList='{{commentList}}' commentsNum='{{commentsNum}}' />
+    <view class="detailFooter">沪ICP备13002172号-3 bilibili.com © 2009-2019</view>
+  </scroll-view>
+</view>

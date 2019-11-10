@@ -1,0 +1,22 @@
+<!--pages/search/search.wxml-->
+<view class="searchPageWrap">
+<!-- 搜索页头部 -->
+  <search-head  />
+  <!-- 网络热搜 -->
+  <view class="hotwordBox">
+    <text style="color:#999999;margin: 20rpx 0;display:block">大家都在搜</text>
+    <view class="hotWordWrap">
+      <text catchtap="handleConfirmSearch" data-keyword="{{item.keyword}}" class="hotWordItem" wx:for='{{hotWordList}}' wx:key='{{index}}'>{{item.keyword}}</text>
+    </view>
+  </view>
+  <!-- 搜索历史 -->
+  <view class="searchHistoryWrap">
+    <text style="color:#999999;margin: 20rpx 0;display:block;">历史搜索</text>
+    <view wx:for='{{searchHistoryList}}' wx:key='{{index}}'  class="historyItem clearfix">
+      <image class="historyBGP" src="../../assets/image/history.png"></image>
+      <text catchtap="handleConfirmSearch" data-keyword="{{item}}" class="historyItem">{{item}}</text>
+    </view>
+  </view>
+  <view wx:if='{{searchHistoryList.length}}' catchtap="handleClearHistory" style="text-align:center;font-size:28rpx;color:#999999;line-height:92rpx">清除历史记录</view>
+
+</view>

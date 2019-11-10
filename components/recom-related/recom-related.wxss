@@ -1,0 +1,48 @@
+/* components/recom-related/recom-related.wxss */
+.recomWrap {
+  padding: 0 12rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  margin-top: 20rpx;
+}
+.recomItem {
+  width: 50%;
+  margin-bottom: 30rpx;
+}
+.imgAndDesc {
+  position: relative;
+}
+.videoDesc {
+  width: 340rpx;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 0 10rpx;
+  position: absolute;
+  bottom: 10rpx;
+  font-size: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+}
+.recomImg {
+  display: block;
+  width: 340rpx;
+  height: 212rpx;
+  margin: 0 auto;
+  border-radius: 20rpx;
+}
+.recomTitle {
+  color: #212121;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 0 20rpx;
+
+  /* 超过两行显示省略号 */
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  /* 超过两行显示省略号 */
+}

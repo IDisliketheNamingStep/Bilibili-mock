@@ -1,0 +1,46 @@
+<!--components/categoryList/categoryList.wxml-->
+<view class="navWrap">
+ <!-- 默认显示 -->
+  <view class="navSingleLineWrap">
+    <view class="navSingleLinecontent">
+      <view class="catScrollWrap">
+        <view catchtap="handleCatChange" 
+          data-index="{{index}}"  
+          class="navSingleLinecatItem" 
+          wx:for="{{catLiat}}" 
+          wx:key="{{index}}">
+          <text class="{{catActiveIndex == index ? 'catActive' : ''}}">{{item}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- slidedown箭头 -->
+    <view class="slideDowniconWrap">
+      <view class="slideDowniconContent">
+        <image catchtap="handleSlideToggle"  
+               class="slidedownicon" 
+               src="/assets/image/sprite-icons.png"></image>
+      </view>
+    </view>
+  </view>
+
+<!-- 默认隐藏 -->
+  <view class="catListWrap {{slideDown ? 'slideDown' : ''}}">
+
+    <view catchtap="handleCatChange" 
+          data-index="{{index}}"  
+          class="catItem" 
+          wx:for="{{catLiat}}" 
+          wx:key="{{index}}">
+      <text class="{{catActiveIndex == index ? 'catActiveIndex' : ''}}">{{item}}</text>
+    </view>
+    <!-- slideUP箭头 -->
+    <view class="slideUPiconWrap">
+      <image catchtap="handleSlideToggle" 
+             class="slideUPicon" 
+             src="/assets/image/sprite-icons.png"></image>
+    </view>
+
+  </view>
+ 
+
+</view>

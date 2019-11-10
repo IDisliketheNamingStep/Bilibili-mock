@@ -1,0 +1,99 @@
+/* components/categoryList/categoryList.wxss */
+.navWrap {
+  position: relative;
+}
+
+/* 默认显示区 */
+
+.navSingleLineWrap {
+  z-index: 1;
+  position: relative;
+}
+.navSingleLinecontent {
+  display: inline-block;
+  width: 92%;
+  overflow: scroll;
+}
+.navSingleLinecontent::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.catScrollWrap {
+  width: 1000%;
+}
+.navSingleLinecatItem {
+  float: left;
+  font-size: 14px;
+  line-height: 32px;
+  padding: 0 40rpx;
+  color: #757575;
+}
+.catActive {
+  color: #FB7299;
+  border-bottom: 2px solid #FB7299;
+  padding-bottom: 5rpx;
+}
+
+.slideDowniconWrap {
+  width: 60rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 0rpx;
+}
+.slideDowniconContent {
+  width: 30rpx;
+  height: 26rpx;
+  overflow: hidden;
+  position: relative;
+}
+.slidedownicon {
+  width: 320px;
+  height: 38px;
+  position: absolute;
+  left: -183px;
+}
+/* 默认隐藏区 */
+.catListWrap {
+  background-color: white;
+  z-index: 2;
+  padding: 16rpx;
+  width: 100%;
+  display: flex;
+  /* display: none; */
+  flex-wrap: wrap;
+  position: absolute;
+  top: -411rpx;
+  transition: all 0.8s ease 0s;
+}
+.slideDown {
+  top: -8px;
+}
+.catItem {
+  color: #757575;
+  font-size: 14px;
+  line-height: 32px;
+  margin: 0 0 30rpx 0;
+  text-align: center;
+  display: inline-block;
+  width: 16%;
+}
+.catActiveIndex {
+  color: #FB7299;
+  border-bottom: 2px solid #FB7299;
+  padding-bottom: 15rpx;
+}
+.slideUPiconWrap {
+  width: 30rpx;
+  height: 26rpx;
+  position: absolute;
+  left: 360rpx;
+  bottom: 20rpx;
+  overflow: hidden;
+}
+.slideUPicon {
+  width: 320px;
+  height: 38px;
+  position: absolute;
+  left: -151px;
+}

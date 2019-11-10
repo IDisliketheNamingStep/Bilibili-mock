@@ -1,0 +1,9 @@
+<!--components/self-tabbar/self-tabbar.wxml-->
+<view class="self-tabbar-Box">
+  <view class="tabImgBox">
+    <image catchtap="handleHomeSearchJump" data-dst="home" class="tabImg" src="/assets/image/toHome.png"></image>
+  </view>
+  <view class="tabImgBox">
+    <image catchtap="handleHomeSearchJump" data-dst="search" class="tabImg" src="/assets/image/toSearch.png"></image>
+  </view>
+</view>

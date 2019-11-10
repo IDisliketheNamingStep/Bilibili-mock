@@ -1,0 +1,95 @@
+/* pages/UP-page/UP-page.wxss */
+.UP-page-Box {
+  position: fixed;
+  top: 0;
+  bottom: 98rpx;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+}
+.topPic {
+  position:relative;
+  margin-bottom: 80rpx;
+}
+.upImg {
+  width: 160rpx;
+  height:160rpx;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  bottom: -80rpx;
+  left: 20rpx;
+}
+.UP-info {
+  padding: 40rpx;
+}
+/* 视频列表 */
+.UP-posted-video {
+  padding: 20rpx;
+}
+.videoItemUnit {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #CCCCCC;
+  padding-bottom: 20rpx;
+}
+.unitLeft {
+  width: 234rpx;
+  height: 146rpx;
+  margin-right: 20rpx;
+  position: relative;
+}
+.unitLeft image {
+  width: 234rpx;
+  height: 146rpx;
+  display: block;
+  border-radius: 10rpx;
+}
+.vDuration {
+  color: white;
+  position: absolute;
+  bottom: 6rpx;
+  right: 6rpx;
+  padding: 0 8rpx;
+  font-size: 24rpx;
+  border-radius: 16rpx;
+  background-color: rgba(0, 0, 0, 0.3)
+}
+.unitRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.videoTitle {
+  color: #212121;
+  font-size: 28rpx;
+  line-height: 32rpx;
+  /* 超过两行显示省略号 */
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  /* 超过两行显示省略号 */
+}
+.icons {
+  width: 28rpx;
+  height: 24rpx;
+  display: block;
+  margin-right: 6rpx;
+  position: relative;
+  top: 4rpx;
+}
+.textBeforeIcons {
+  color: #999999;
+  font-size: 24rpx;
+  margin-right: 40rpx;
+}
+.footerText {
+  color: #999999;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 48rpx;
+}

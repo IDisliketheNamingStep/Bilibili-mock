@@ -1,0 +1,97 @@
+<!--pages/search-results/search-results.wxml-->
+  <self-tabbar />
+<view class="searchresultsWrap">
+  <scroll-view scroll-top="{{scrollTop}}" bind:scroll='handleScrollViewScroll' scroll-y="true" style="height: 100%;" bindscrolltolower="handleReachBottom">
+    <topHomeSearch wx:if='{{toTOPshowMark}}' bind:scrollToTop='scrollToTop' />
+    <!-- 搜索头部 -->
+    <search-head  />
+    <!-- 搜索类型选择 -->
+    <view class="searchTypeWrap">
+      <view catchtap="handleTypeChange" data-type="current_search_type" data-index="{{index}}" wx:for='{{search_type_list}}' wx:key='{{index}}' 
+      class="searchTypeItem {{current_search_type === index ? 'activeItem' : ''}}">{{item.title}}
+        <text wx:if='{{index !== 0}}'>({{top_tlist[search_type_list[index].search_type]}})</text>
+      </view>
+    </view>
+    <!-- 排序类型选择 -->
+    <view wx:if='{{current_search_type === 0 }}' class="orderTypeWrap">
+      <text catchtap="handleTypeChange" data-type="current_order_type" data-index="{{index}}" wx:for='{{order_list}}' wx:key='{{index}}' 
+      class="orderTypeItem {{current_order_type === index ? 'activeItem' : ''}}">{{item.title}}</text>
+    </view>
+    <!-- 搜索结果展示 -->
+    <view class="searchResultsShowArea">
+      <!-- 展示视频 -->
+      <!-- 无数据===================================== -->
+      <view wx:if='{{current_search_type !== 0 && top_tlist[search_type_list[current_search_type].search_type] === 0}}' class="notFound">
+        <image style="padding-top:200rpx;width:480rpx;height:300rpx;display:block;margin:0 auto" src="/assets/image/notFound.png"></image>
+        <view style="margin-top:40rpx;text-align:center;color:#757575;font-size:26rpx;padding-bottom:364rpx">什么都没有找到啊 T_T</view>
+      </view>
+      <!-- tempbangumiList综合默认排序current_order_type -->
+      <!-- <view wx:if='{{current_search_type === 0 && order === "totalrank"}}' class="showVideos"> -->
+      <view wx:if='{{current_search_type === 0 && order === order_list[0].order_type}}' class="showVideos">
+        <!-- 综合搜索结果，+推荐番剧 -->
+        <view wx:if='{{tempbangumiList.length}}'>
+        <!-- 推荐番剧单元 -->
+          <bangumi-show-unit wx:for='{{tempbangumiList}}' wx:key='{{index}}' bangumiInfo='{{item}}' />
+          <!-- 推荐番剧，查看更多 -->
+          <view data-index="{{1}}" catchtap="handleJumpToBangumi" style="display:flex">
+            <image style="width:244rpx;height:1rpx;display:block;padding:22rpx 25rpx 0 0;" src="/assets/image/line.png"></image>
+            <text style="font-size:28rpx;color:#999999;line-height:44rpx">查看更多番剧</text>
+            <image style="width:44rpx;height:44rpx;display:block" src="/assets/image/enter.png"></image>
+            <image style="width:244rpx;height:1rpx;display:block;padding:22rpx 0 0 15rpx;" src="/assets/image/lineR.png"></image>
+          </view>
+          <!-- 推荐番剧，查看更多 结束-->
+        </view>
+        <!-- 综合搜索结果，+推荐番剧结束 -->
+
+        <!-- 综合搜索结果，+推荐影视 -->
+        <view wx:if='{{tempPgcList.length}}'>
+        <!-- 推荐影视单元 -->
+          <pgc-show-unit wx:for='{{tempPgcList}}' wx:key='{{index}}' pgcInfo='{{item}}' />
+          <!-- 推荐影视，查看更多 -->
+          <view data-index="{{3}}" catchtap="handleJumpToBangumi" style="display:flex">
+            <image style="width:244rpx;height:1rpx;display:block;padding:22rpx 25rpx 0 0;" src="/assets/image/line.png"></image>
+            <text style="font-size:28rpx;color:#999999;line-height:44rpx">查看更多影视</text>
+            <image style="width:44rpx;height:44rpx;display:block" src="/assets/image/enter.png"></image>
+            <image style="width:244rpx;height:1rpx;display:block;padding:22rpx 0 0 15rpx;" src="/assets/image/lineR.png"></image>
+          </view>
+          <!-- 推荐影视，查看更多 结束-->
+        </view>
+        <!-- 综合搜索结果，+推荐影视结束 -->
+
+        <search-result-show-video-unit catchtap="handleNavToDetail" data-videoInfo="{{item}}" wx:for='{{alltotalrankList.list}}' wx:key='{{index}}' videoInfo='{{item}}' />
+      </view>
+      <!-- 综合播放多 -->
+      <!-- <view wx:if='{{current_search_type === 0 && order === "click"}}' class="showVideos"> -->
+      <view wx:if='{{current_search_type === 0 && order === order_list[1].order_type}}' class="showVideos">
+        <search-result-show-video-unit wx:for='{{allclickList.list}}' wx:key='{{index}}' videoInfo='{{item}}' />
+      </view>
+      <!-- 综合新发布 -->
+      <!-- <view wx:if='{{current_search_type === 0 && order === "pubdate"}}' class="showVideos"> -->
+      <view wx:if='{{current_search_type === 0 && order === order_list[2].order_type}}' class="showVideos">
+        <search-result-show-video-unit wx:for='{{allpubdateList.list}}' wx:key='{{index}}' videoInfo='{{item}}' />
+      </view>
+      <!-- 综合弹幕多 -->
+      <!-- <view wx:if='{{current_search_type === 0 && order === "dm"}}' class="showVideos"> -->
+      <view wx:if='{{current_search_type === 0 && order === order_list[3].order_type}}' class="showVideos">
+        <search-result-show-video-unit wx:for='{{alldmList.list}}' wx:key='{{index}}' videoInfo='{{item}}' />
+      </view>
+      <!-- 番剧 -->
+      <!-- <view wx:if='{{current_search_type === 1 && top_tlist.bangumi > 0}}' class="showVideos"> -->
+      <view wx:if='{{current_search_type === 1}}' class="showVideos">
+        <!-- <search-result-show-video-unit wx:for='{{bangumiList.list}}' wx:key='{{index}}' videoInfo='{{item}}' /> -->
+        <bangumi-show-unit wx:for='{{bangumiList.list}}' wx:key='{{index}}' bangumiInfo='{{item}}' />
+      </view>
+      <!-- UP主 -->
+      <view wx:if='{{current_search_type === 2}}' class="showUs">
+        <search-result-up-unit wx:for='{{upuserList.list}}' wx:key='{{index}}' UPinfo='{{item}}' />
+      </view>
+      <!-- 影视 -->
+      <!-- <view wx:if='{{current_search_type === 3 && top_tlist.pgc > 0}}' class="showVideos"> -->
+      <view wx:if='{{current_search_type === 3}}' class="showVideos">
+        <pgc-show-unit wx:for='{{pgcList.list}}' wx:key='{{index}}' pgcInfo='{{item}}' />
+        <!-- <search-result-show-video-unit wx:for='{{pgcList.list}}' wx:key='{{index}}' videoInfo='{{item}}' /> -->
+      </view>
+    </view>
+    <view wx:if='{{itimer}}' class="loadingTips" >加载ing ^_^ 请稍候</view>
+  </scroll-view>
+</view>

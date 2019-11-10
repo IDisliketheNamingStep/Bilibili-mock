@@ -1,0 +1,19 @@
+<!--components/bangumi-show-unit/bangumi-show-unit.wxml-->
+<view catchtap="handleNavToMovieanime" style="display:flex;padding:20rpx;color:#212121;font-size:28rpx" class="bangumi-show-unit">
+  <!-- 左侧番剧封面 -->
+  <image style="width:156rpx;height:208rpx;display:block;margin-right:20rpx;border-radius:12rpx" src="{{bangumiInfo.cover}}"></image>
+  <!-- 右侧文字描述 -->
+  <view class="unitRight">
+    <view style="display:flex">
+    <!-- 番剧小图标，番剧分类 -->
+      <image style="width:38rpx;height:38rpx;display:block;margin-right:10rpx;" src="/assets/image/bangumi.png"></image>
+      番剧
+    </view>
+    <!-- 视频标题 -->
+    <view style="margin:15rpx 0 6rpx">{{bangumiInfo.title}}</view>
+    <!-- 更新状态、完结 -->
+    <view style="font-size:24rpx;color:#999999" wx:if='{{bangumiInfo.is_finish}}'>TV更新至第{{bangumiInfo.newest_ep_index}}话</view>
+    <view style="font-size:24rpx;color:#999999" wx:if='{{!bangumiInfo.is_finish}}'>已完结</view>
+  </view>
+</view>
+

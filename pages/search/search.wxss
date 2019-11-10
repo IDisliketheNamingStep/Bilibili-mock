@@ -1,0 +1,71 @@
+/* pages/search/search.wxss */
+.searchPageHead {
+  margin: 10rpx 0 10rpx;
+  display: flex;
+  align-items: center;
+}
+/* 搜索头左边 */
+.searchLeft {
+  border-radius: 8rpx;
+  margin-left: 30rpx;
+  background-color: #F4F4F4;
+  flex: 1;
+  position: relative;
+}
+/* 搜索放大镜 */
+.searchBGP {
+  left: 10rpx;
+  top: 13rpx;
+  position: absolute;
+  width: 44rpx;
+  height: 44rpx;
+}
+/* 输入框 */
+.inputWrap {
+  margin-left: 66rpx;
+  font-size: 26rpx;
+  padding: 15rpx 0;
+}
+/* 搜索头，取消按钮 */
+.searchPageHead text {
+  color: #FB7299;
+  padding: 0 30rpx;
+}
+/* 网络热搜 */
+.hotwordBox {
+  border-bottom: 1px solid #F4F4F4;
+  height: 245rpx;
+  overflow: hidden;
+  margin: 0 30rpx;
+}
+.hotWordWrap {
+  display: flex;
+  flex-flow: row wrap;
+}
+.hotWordItem {
+  color: #505050;
+  font-size: 26rpx;
+  border-radius: 27rpx;
+  border: 1px solid #999999;
+  padding: 10rpx 20rpx;
+  margin-right: 15rpx;
+  margin-bottom: 25rpx;
+}
+/* 历史搜索 */
+.searchHistoryWrap {
+ vertical-align: middle;
+ margin:30rpx;
+}
+.historyItem {
+  font-size: 26rpx;
+  padding: 20rpx 0;
+  border-bottom:1px solid #F4F4F4;
+}
+.historyBGP {
+  position: relative;
+  top: 6rpx;
+  margin-top: 10rpx;
+  width:32rpx;
+  height:32rpx;
+  margin-right:20rpx;
+}

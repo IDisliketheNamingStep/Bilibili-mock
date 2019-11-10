@@ -1,0 +1,18 @@
+<!--components/movie-animate-recoms/movie-animate-recoms.wxml-->
+<!-- format.playFormat -->
+<wxs src="../../utils/format.wxs" module="format" />
+<view catchtap="handleNavToMovieanime" class="movie-animate-recoms-Box">
+  <view class="unitLeft">
+    <image src="{{recomInfo.new_ep.cover}}"></image>
+  </view>
+  <view class="unitRight">
+    <view class="movietitle">{{recomInfo.title}}</view>
+    <view>
+      <view>
+        <text style="margin-right:0rpx">{{format.playFormat(recomInfo.stat.view)}}次观看</text> · 
+        <text>{{format.playFormat(recomInfo.stat.follow)}}人追剧</text>
+      </view>
+      <view class="openApp">App 内打开</view>
+    </view>
+  </view>
+</view>

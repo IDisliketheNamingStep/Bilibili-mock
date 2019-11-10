@@ -1,0 +1,4 @@
+/* components/indexTopArea/indexTopArea.wxss */
+image {
+  width: 100%;
+}

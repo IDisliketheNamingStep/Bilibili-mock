@@ -1,0 +1,8 @@
+<!--components/search-head/search-head.wxml-->
+<view class="searchPageHead">
+  <view class="searchLeft">
+    <image class="searchBGP" src="../../assets/image/search-pro.png"></image>
+    <input bindinput="handleUpdateKeyword" bindconfirm="handleConfirmSearch" class="inputWrap" placeholder="{{inputPlaceHolder}}"/>
+  </view>
+  <text catchtap="handleNavback">取消</text>
+</view>

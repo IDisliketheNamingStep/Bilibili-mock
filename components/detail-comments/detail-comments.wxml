@@ -1,0 +1,35 @@
+<!--components/detail-comments/detail-comments.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
+<!-- 评论模块 -->
+<view class="cpmmentWrap">
+  <!-- 评论头及总评论数 -->
+  <view class="commentsHead">
+    评论<text class="commentsNum">（{{commentsNum}}）</text>
+  </view>
+  <!-- 评论内容区 -->
+  <view class="commentsContent">
+    <!-- 单个评论单元，用于遍历 -->
+    <view wx:for='{{commentList}}' wx:key='{{index}}' class="commentItem">
+      <!-- 左侧，用户头像 -->
+      <view class="cuAvatarWrap">
+        <image mode="aspectFill" class="cuAvatar" src="{{item.member.avatar}}"></image>
+      </view>
+      <!-- 评论文字区 -->
+      <view class="commentText">
+        <!-- 文字区头部，昵称及评论日期 -->
+        <view class="commentTextHead">
+          <!-- 用户昵称 -->
+          <text class="cuname">{{item.member.uname}}</text>
+          <!-- 评论日期 -->
+          <text class="cctime">{{format.dateFormat(item.ctime)}}</text>
+        </view>
+        <!-- 评论内容 -->
+        <text class="ccText">{{item.content.message}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="openAPP">打开App，查看全部评论</view>
+
+</view>
+

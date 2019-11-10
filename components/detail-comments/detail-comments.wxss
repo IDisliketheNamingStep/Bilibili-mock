@@ -1,0 +1,60 @@
+/* components/detail-comments/detail-comments.wxss */
+.commentsHead {
+  margin: 0 30rpx;
+}
+.commentsNum {
+  color: #999999;
+  font-size: 15px;
+}
+/* 评论单元，分为头像及文字两部分 */
+.commentItem {
+  margin: 30rpx 20rpx 0;
+  display: flex;
+  flex-flow: row nowrap;
+  border-bottom: 1px solid #EEEEEE;
+}
+/* 评论文字将盒子撑开 */
+.commentText {
+  flex: 1;
+}
+.cuAvatarWrap {
+  margin-right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+.cuAvatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+/* 用户名及评论日期 */
+.commentTextHead {
+  display: flex;
+  justify-content: space-between;
+}
+/* 用户名 */
+.cuname{
+  font-size: 13px;
+  line-height: 18px;
+  color: #757575;
+}
+/* 评论时间 */
+.cctime{
+  font-size: 11px;
+  color: #999999;
+}
+/* 具体评论文字 */
+.ccText {
+  display: inline-block;
+  margin: 20rpx 0 30rpx;
+  font-size: 14px;
+  color: #212121
+}
+.openAPP {
+  background-color: #FB7299;
+  padding: 20rpx 0;
+  margin: 20rpx 20rpx 0;
+  text-align: center;
+  border-radius: 40rpx;
+  color: white;
+}

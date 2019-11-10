@@ -1,0 +1,23 @@
+/* components/topHomeSearch/topHomeSearch.wxss */
+.navIconsBox {
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  z-index: 9999;
+  border-radius: 50%;
+  background-color: white;
+  border: 2rpx solid #4D4D4D;
+
+}
+.navIcons {
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  margin: 10rpx auto 0;
+}
+.toTopBox {
+  width: 60rpx;
+  height: 60rpx;
+  bottom: 120rpx;
+  right: 30rpx;
+}

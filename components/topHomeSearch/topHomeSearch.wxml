@@ -1,0 +1,4 @@
+<!--components/topHomeSearch/topHomeSearch.wxml-->
+<view class="navIconsBox toTopBox">
+  <image catchtap="scrollToTop" style="margin: 8rpx auto 0;" class="navIcons toTop" src="/assets/image/toTop.png"></image>
+</view>

@@ -1,0 +1,23 @@
+<!--components/movie-animate-titlepic/movie-animate-titlepic.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="movie-animate-titlepic-Box">
+  <view class="unitLeft">
+    <image src="{{videoInfo.mediaInfo.cover}}"></image>
+  </view>
+  <view style="flex:1;" class="unitMiddle">
+    <view style="font-size:32rpx;color:black;margin-bottom:10rpx;">{{videoInfo.mediaInfo.title}}</view>
+    <text style="margin-right:20rpx">{{format.playFormat(videoInfo.seasonStat.views)}}播放</text>
+    <text>{{format.playFormat(videoInfo.seasonStat.favorites)}}收藏</text>
+    <view style="padding: 8rpx 0">{{videoInfo.newestEp.desc}}</view>
+    <view class="movieDesc">{{videoInfo.mediaInfo.evaluate}}</view>
+  </view>
+  <view style="width:140rpx;margin-top:-40rpx;text-align:center;" class="unitRight">
+    <view style="color:#FFA726;" >
+      <text style="font-size:36rpx;line-height:48rpx;padding: 0 4rpx;">
+        {{videoInfo.mediaRating.score ? videoInfo.mediaRating.score : ''}}</text>
+        <text>{{videoInfo.mediaRating.score ? '分' : '暂无评分'}}</text>
+    </view>
+    <text style="padding: 0 4rpx">{{videoInfo.mediaRating.count ? format.playFormat(videoInfo.mediaRating.count)+'人' : '评论人数不足'}}</text>
+  </view>
+</view>
+

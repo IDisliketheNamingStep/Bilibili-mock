@@ -1,0 +1,56 @@
+<!--pages/UP-page/UP-page.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
+<view style="padding-bottom:60rpx;" class="UP-page-Box">
+  <self-tabbar />
+  <scroll-view scroll-top="{{scrollTop}}" bind:scroll='handleScrollViewScroll' scroll-y="true" style="height: 100%;" bindscrolltolower="handleReachBottom">
+    <!-- 回到顶部 -->
+    <topHomeSearch wx:if='{{toTOPshowMark}}' bind:scrollToTop='scrollToTop' />
+    <!-- 顶部图片 -->
+    <view class="topPic">
+      <image mode="widthFix" style="width:100%;display:block;" 
+      src="/assets/image/bannerTop.png"></image>
+      <image src="{{UPinfo.upic}}" class="upImg"></image>
+    </view>
+    <!-- UP信息 -->
+    <view class="UP-info">
+      <!-- UP昵称 -->
+      <view style="font-size:40rpx;line-height:48px;">
+        <text style="margin-right:20rpx">{{UPinfo.uname}}</text>
+        <text style="font-size:28rpx">UID:{{UPinfo.mid}}</text>
+      </view>
+      <!-- 关注及粉丝 -->
+      <view style="font-size:28rpx">
+        <text style="color:#212121;margin-right:10rpx">{{UPerInfo.following}}</text>
+        <text style="color:#757575;margin-right:40rpx">关注</text>
+        <text style="color:#212121;margin-right:10rpx">{{UPerInfo.follower}}</text>
+        <text style="color:#757575">粉丝</text>
+      </view>
+      <!-- UP签名 -->
+      <view style="color:#999999;font-size:26rpx;margin:40rpx 0 0">{{UPinfo.usign}}</view>
+    </view>
+    <!-- UP投稿的视频 -->
+    <view class="UP-posted-video">
+      <view style="margin:0 0 40rpx 0">Ta的投稿</view>
+      <!-- UP作品单元 -->
+      <view catchtap="handleNavToDetail" data-videoInfo="{{item}}" wx:for='{{UPPostedInfo.list.vlist}}' wx:key='{{index}}' class="videoItemUnit">
+        <!-- 左边图片及时长 -->
+        <view class="unitLeft">
+          <image src="{{item.pic}}"></image>
+          <text class="vDuration">{{item.length}}</text>
+        </view>
+        <view class="unitRight">
+          <view class="videoTitle">{{item.title}}</view>
+          <view style="display:flex" class="viewNumcomNum">
+            <image class="icons" src="/assets/image/ico_play.png"></image>
+            <text class="textBeforeIcons">{{format.playFormat(item.play)}}</text>
+            <image class="icons" src="/assets/image/ico_danmu.png"></image>
+            <text class="textBeforeIcons">{{format.playFormat(item.video_review)}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- UP投稿的视频结束 -->
+    <view class="footerText">哔哩哔哩 沪ICP备13002172号-3</view>
+    <view class="footerText">信息网络传播视听节目许可证：0910417</view>
+  </scroll-view>
+</view>

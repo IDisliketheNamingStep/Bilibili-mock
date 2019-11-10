@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/detail/detail",
+    "pages/search/search",
+    "pages/searchresults/searchresults",
+    "pages/movie-animate/movie-animate",
+    "pages/UP-page/UP-page"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FB7299",
+    "navigationBarTitleText": "Bilibili-mock",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "index-top-area": "/components/indexTopArea/indexTopArea",
+    "recom-related": "/components/recom-related/recom-related",
+    "search-head": "/components/search-head/search-head",
+    "detail-comments": "/components/detail-comments/detail-comments",
+    "topHomeSearch": "/components/topHomeSearch/topHomeSearch",
+    "self-tabbar": "/components/self-tabbar/self-tabbar"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#999999",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/assets/image/logobottom.png",
+        "selectedIconPath": "/assets/image/logobottom.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "/assets/image/search-pro.png",
+        "selectedIconPath": "/assets/image/search-pro.png"
+      }
+    ]
+  }
+}

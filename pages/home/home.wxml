@@ -1,0 +1,18 @@
+<!--pages/home/home.wxml-->
+<view class="homepageWrap">
+  <view wx:if='{{toTOPshowMark}}' class="navIconsBox toTopBox">
+    <image catchtap="scrollToTop" style="margin: 8rpx auto 0;" class="navIcons toTop" src="/assets/image/toTop.png"></image>
+  </view>
+  <!-- <index-top-area style="z-index:9999" /> -->
+  <!-- <catList /> -->
+  <!-- 轮播图 -->
+  <swiper class="homeSwiper" autoplay circular indicator-dots 
+          indicator-active-color="rgba(222,105,140,1)"
+          indicator-color="rgba(255,255,255,1)">
+    <swiper-item class='homeSwiperItem' wx:for='{{swiperList}}' wx:key='{{index}}'>
+      <image class="swiperImg" mode="widthFix" src="{{item.pic}}"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 相关推荐 -->
+  <recom-related showDuration='{{false}}' recomList='{{recomList}}'/>
+</view>

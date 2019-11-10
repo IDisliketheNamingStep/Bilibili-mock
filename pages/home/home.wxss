@@ -1,0 +1,35 @@
+/* pages/home/home.wxss */
+.homeSwiper {
+  padding: 20rpx 25rpx 0;
+  overflow: hidden;
+  height: 207rpx;
+}
+.homeSwiperItem {
+  border-radius: 20rpx;
+}
+.swiperImg {
+  width: 702rpx;
+}
+/* 回到顶部 */
+.navIconsBox {
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  z-index: 9999;
+  border-radius: 50%;
+  background-color: white;
+  border: 2rpx solid #4D4D4D;
+
+}
+.navIcons {
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  margin: 10rpx auto 0;
+}
+.toTopBox {
+  width: 60rpx;
+  height: 60rpx;
+  bottom: 90rpx;
+  right: 30rpx;
+}
