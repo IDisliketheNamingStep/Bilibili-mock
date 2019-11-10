@@ -9,7 +9,7 @@
     <view class="topPic">
       <image mode="widthFix" style="width:100%;display:block;" 
       src="/assets/image/bannerTop.png"></image>
-      <image src="{{UPinfo.upic}}" class="upImg"></image>
+      <image src="{{UPinfo.upic ||UPinfo.avatar}}" class="upImg"></image>
     </view>
     <!-- UP信息 -->
     <view class="UP-info">
@@ -26,13 +26,14 @@
         <text style="color:#757575">粉丝</text>
       </view>
       <!-- UP签名 -->
-      <view style="color:#999999;font-size:26rpx;margin:40rpx 0 0">{{UPinfo.usign}}</view>
+      <view style="color:#999999;font-size:26rpx;margin:40rpx 0 0">{{UPinfo.usign || UPinfo.sign}}</view>
     </view>
     <!-- UP投稿的视频 -->
     <view class="UP-posted-video">
       <view style="margin:0 0 40rpx 0">Ta的投稿</view>
       <!-- UP作品单元 -->
-      <view catchtap="handleNavToDetail" data-videoInfo="{{item}}" wx:for='{{UPPostedInfo.list.vlist}}' wx:key='{{index}}' class="videoItemUnit">
+      <view wx:if='{{postedContent}}' catchtap="handleNavToDetail" data-videoInfo="{{item}}" 
+        wx:for='{{UPPostedInfo.list.vlist}}' wx:key='{{index}}' class="videoItemUnit">
         <!-- 左边图片及时长 -->
         <view class="unitLeft">
           <image src="{{item.pic}}"></image>
@@ -47,6 +48,14 @@
             <text class="textBeforeIcons">{{format.playFormat(item.video_review)}}</text>
           </view>
         </view>
+      </view>
+      <!-- 当UP没上传过内容 -->
+      <view style="font-size:32rpx;color:#999999;line-height:38rpx;text-align:center" class="noContent">
+        <view class="noConImg">
+          <image style="width:560rpx;height:320rpx;display:block;margin:0 auto;" src="/assets/image/noContent.png"></image>
+        </view>
+        <view>Ta还没有投过稿~</view>
+        <view>快去发现<text style="color:#FB7299" catchtap="handleJumptoHome"> 新内容 </text>吧</view>
       </view>
     </view>
     <!-- UP投稿的视频结束 -->

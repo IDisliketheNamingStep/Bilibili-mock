@@ -1,4 +1,6 @@
 // pages/movie-animate/movie-animate.js
+var app = getApp()
+var localhost = app.globalData.localhost
 Page({
 
   /**
@@ -25,7 +27,7 @@ Page({
   var _this = this
   return new Promise((resolve,reject)=>{
     wx.request({
-      url: 'http://169.254.131.173:3000/detail/movieURL?id=' + season_id,
+      url: localhost + '/detail/movieURL?id=' + season_id,
       success(res) {
         _this.setData({ mainInfo: res.data })
         resolve(res.data.videoInfo.epInfo.aid)
@@ -63,7 +65,7 @@ Page({
     // 请求评论数据
     aid = await this.testAsync(season_id)
     wx.request({
-      url: 'http://169.254.131.173:3000/detail/usercomments?aid=' + aid,
+      url: localhost + '/detail/usercomments?aid=' + aid,
       success(res) {
         _this.setData({
           commentList: res.data.data.replies,
@@ -74,7 +76,7 @@ Page({
 
     // 请求相关视频列表数据
     wx.request({
-      url: 'http://169.254.131.173:3000/detail/pgcRecomList?aid=' + season_id,
+      url: localhost + '/detail/pgcRecomList?aid=' + season_id,
       success(res) {
         _this.setData({ recomList: res.data.result.season })
       }

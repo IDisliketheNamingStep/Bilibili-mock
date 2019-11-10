@@ -1,4 +1,6 @@
 // pages/detail/detail.js
+var app = getApp()
+var localhost = app.globalData.localhost
 Page({
 
   /**
@@ -60,7 +62,7 @@ Page({
     
     // 请求评论数据
     wx.request({
-      url: 'http://169.254.131.173:3000/detail/usercomments?aid=' + aid,
+      url: localhost + '/detail/usercomments?aid=' + aid,
       success(res) {
         _this.setData({ commentList: res.data.data.replies, 
                         commentsNum: res.data.data.page.acount})
@@ -69,7 +71,7 @@ Page({
 
     // 请求相关视频列表数据
     wx.request({
-      url: 'http://169.254.131.173:3000/detail/relatedList?aid=' + aid,
+      url: localhost + '/detail/relatedList?aid=' + aid,
       success(res) {
         _this.setData({ relatedList: res.data.data})
       }
@@ -77,7 +79,7 @@ Page({
 
     // 请求视频地址
     wx.request({
-      url: 'http://169.254.131.173:3000/detail/videoURL?aid=' + aid,
+      url: localhost + '/detail/videoURL?aid=' + aid,
       success(res) {
         var videoURL = res.data
         _this.setData({ videoURL: videoURL})

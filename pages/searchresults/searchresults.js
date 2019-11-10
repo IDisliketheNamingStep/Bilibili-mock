@@ -1,4 +1,6 @@
 // pages/search-results/search-results.js
+var app = getApp()
+var localhost = app.globalData.localhost
 Page({
 
   /**
@@ -153,7 +155,7 @@ Page({
     if(_this.data.current_search_type === 2) {
       await wx.request({
         // 请求地址
-        url: 'http://169.254.131.173:3000/search/searchengine',
+        url: localhost + '/search/searchengine',
         // 请求参数
         data: {
           order: _this.data.order || "totalrank",
@@ -187,7 +189,7 @@ Page({
     // 2获取其它搜索结果 http://169.254.131.173:3000/search/searchengine
       wx.request({
         // 请求地址
-        url: 'http://169.254.131.173:3000/search/searchengine',
+        url: localhost + '/search/searchengine',
         // POST请求参数
         data: {
           order: _this.data.order || "totalrank",
@@ -262,8 +264,10 @@ Page({
   },
   // 跳转到番剧或影视搜索结果页面
   handleJumpToBangumi(event) {
-    var index = event.currentTarget.dataset.index
-    this.setData({current_search_type: index})
+    // var index = event.currentTarget.dataset.index
+    event.currentTarget.dataset.type = "current_search_type"
+    // this.setData({current_search_type: index})
+    this.handleTypeChange(event)
   },
 
   /**

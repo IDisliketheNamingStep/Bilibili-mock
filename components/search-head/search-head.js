@@ -1,4 +1,6 @@
 // components/search-head/search-head.js
+var app = getApp()
+var localhost = app.globalData.localhost
 Component({
   /**页面生命周期 */
   pageLifetimes: {
@@ -57,7 +59,7 @@ Component({
       var _this = this
       // 获取搜索占位符http://169.254.131.173:3000/search/searchengine
       wx.request({
-        url: 'http://169.254.131.173:3000/search/Placeholder',
+        url: localhost + '/search/Placeholder',
         success(res) {
           _this.setData({ inputPlaceHolder: res.data.data.show_name })
         }

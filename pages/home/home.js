@@ -1,4 +1,6 @@
 // pages/home/home.js
+var app = getApp()
+var localhost = app.globalData.localhost
 Page({
 
   /**
@@ -26,10 +28,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const _this = this
+    var _this = this
     // 获取轮播图信息
     wx.request({
-      url:'http://169.254.131.173:3000/swiperlist',
+      url: localhost + '/swiperlist',
       success(res) {
         _this.setData({ swiperList: res.data.data})
       }
@@ -37,7 +39,7 @@ Page({
 
     // 获取推荐视频信息
     wx.request({
-      url: 'http://169.254.131.173:3000/recomList',
+      url: localhost + '/recomList',
       success(res) {
         _this.setData({ recomList: res.data.data.list})
       }

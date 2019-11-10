@@ -19,6 +19,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    handle_NavTo_UPpage(options) {
+      // 向详情页传aid
+      var UPinfo = options.currentTarget.dataset.upinfo
+      // console.log(options.currentTarget.dataset.upinfo,'23331')
+      wx.navigateTo({
+        url: '/pages/UP-page/UP-page',
+        success: function (res) {
+          res.eventChannel.emit('acceptDataFromOpenerPage', { data: UPinfo })
+        }
+      })
+    },
   }
 })

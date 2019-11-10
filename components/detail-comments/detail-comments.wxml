@@ -11,7 +11,7 @@
     <!-- 单个评论单元，用于遍历 -->
     <view wx:for='{{commentList}}' wx:key='{{index}}' class="commentItem">
       <!-- 左侧，用户头像 -->
-      <view class="cuAvatarWrap">
+      <view catchtap="handle_NavTo_UPpage" data-UPinfo="{{item.member}}" class="cuAvatarWrap">
         <image mode="aspectFill" class="cuAvatar" src="{{item.member.avatar}}"></image>
       </view>
       <!-- 评论文字区 -->

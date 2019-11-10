@@ -1,4 +1,6 @@
 // pages/UP-page/UP-page.js
+var app = getApp()
+var localhost = app.globalData.localhost
 Page({
 
   /**
@@ -15,17 +17,24 @@ Page({
     scrollTop: 0,
     // totop展示标志
     toTOPshowMark: false,
+    // 是否上传过作品
+    postedContent: 1
 
   },
   /**
    * 自定义函数
    */
+  handleJumptoHome() {
+    wx.switchTab({
+      url: '/pages/home/home',
+    })
+  },
   handleNavToDetail(options) {
     // 向详情页传aid
     var videoinfo = options.currentTarget.dataset.videoinfo
     var aid = options.currentTarget.dataset.videoinfo.aid
     wx.navigateTo({
-      url: '/pages/detail/detail?aid=' + aid,
+      url: 'pages/detail/detail?aid=' + aid,
       success: function (res) {
         res.eventChannel.emit('acceptDataFromOpenerPage', { data: videoinfo })
       }
@@ -69,7 +78,7 @@ Page({
 
     // 获取UPer信息http://169.254.131.173:3000/upPage/UPerInfo?vmid=444982684
     wx.request({
-      url: 'http://169.254.131.173:3000/upPage/UPerInfo?vmid=' + UPinfo.mid,
+      url: localhost + '/upPage/UPerInfo?vmid=' + UPinfo.mid,
       success(res) {
         _this.setData({ UPerInfo: res.data.data})
       }
@@ -77,9 +86,9 @@ Page({
 
     // 获取UP上传列表http://169.254.131.173:3000/upPage/UPPostedInfo?pn=1&ps=100&order=click&keyword=&mid=479842095
     wx.request({
-      url: 'http://169.254.131.173:3000/upPage/UPPostedInfo?pn=1&ps=100&order=click&keyword=&mid=' + UPinfo.mid,
+      url: localhost + '/upPage/UPPostedInfo?pn=1&ps=100&order=click&keyword=&mid=' + UPinfo.mid,
       success(res) {
-        _this.setData({ UPPostedInfo: res.data.data})
+        _this.setData({ UPPostedInfo: res.data.data, postedContent: res.data.data.list.vlist.length})
       }
     })
 

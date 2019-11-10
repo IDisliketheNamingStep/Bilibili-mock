@@ -1,3 +1,4 @@
+// 播放量格式化
 var playFormat = function (playNum) {
   playNum = parseInt(playNum)
   if (playNum < 10000) {
@@ -8,13 +9,14 @@ var playFormat = function (playNum) {
 }
 module.exports.playFormat = playFormat;
 
+// 时长格式化
 var durationFormat = function (duration) {
   duration /= 60
   return duration.toFixed(2)
 }
 module.exports.durationFormat = durationFormat;
 
-// createdTimeFormat
+// 创建时间格式化createdTimeFormat
 var createdTimeFormat = function (createdTime) {
   if(!createdTime) {
     return createdTime
@@ -23,15 +25,41 @@ var createdTimeFormat = function (createdTime) {
 }
 module.exports.createdTimeFormat = createdTimeFormat;
 
+// 评论时间格式化
+/**
+ * var date = new Date(time * 1000);
+  returnArr.push(date.getFullYear());
+  returnArr.push(formatNumber(date.getMonth() + 1));
+  returnArr.push(formatNumber(date.getDate()));
 
+  returnArr.push(formatNumber(date.getHours()));
+  returnArr.push(formatNumber(date.getMinutes()));
+  returnArr.push(formatNumber(date.getSeconds()));
+
+
+  var nowMonth = now.getMonth() + 1
+  var nowDay = now.getDate()
+ */
 var dateFormat = function (time) {
-  var t = getDate(time)
-  var m = t.getMonth() + 1
-  var d = t.getDay()
+  var date = getDate(time * 1000);
+  var m = date.getMonth() + 1
+  var d = date.getDate()
+  var y = date.getFullYear()
+
+  var now = getDate()
+  var nowYear = now.getFullYear()
+
+  if ((nowYear - y) > 2) {
+    return (nowYear - y) + '年前'
+  } else if ((nowYear - y) < 2 && (nowYear - y) > 1) {
+    return y + '-' + m + '-' +d
+  }
+  
   return m + '-' + d;
 }
 module.exports.dateFormat = dateFormat;
 
+// 时长中将分钟转化为小时
 var miniteToHourFormat = function (dutime) {
   if(dutime) {
     switch (dutime.length) {

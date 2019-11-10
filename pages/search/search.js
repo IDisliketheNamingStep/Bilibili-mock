@@ -1,4 +1,6 @@
 // pages/search/search.js
+var app = getApp()
+var localhost = app.globalData.localhost
 Page({
 
   /**
@@ -34,7 +36,7 @@ Page({
     const _this = this
     // 获取搜索热词
     wx.request({
-      url: 'http://169.254.131.173:3000/search/hotWordList',
+      url: localhost + '/search/hotWordList',
       success(res) {
         _this.setData({ hotWordList: res.data.list })
       }

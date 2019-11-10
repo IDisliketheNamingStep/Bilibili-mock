@@ -1,4 +1,6 @@
 // components/recom-related/recom-related.js
+var app = getApp()
+var localhost = app.globalData.localhost
 Component({
   /**
    * 组件的属性列表

@@ -33,7 +33,7 @@
         <!-- 推荐番剧单元 -->
           <bangumi-show-unit wx:for='{{tempbangumiList}}' wx:key='{{index}}' bangumiInfo='{{item}}' />
           <!-- 推荐番剧，查看更多 -->
-          <view data-index="{{1}}" catchtap="handleJumpToBangumi" style="display:flex">
+          <view data-index="{{1}}" data-="{{}}" catchtap="handleJumpToBangumi" style="display:flex">
             <image style="width:244rpx;height:1rpx;display:block;padding:22rpx 25rpx 0 0;" src="/assets/image/line.png"></image>
             <text style="font-size:28rpx;color:#999999;line-height:44rpx">查看更多番剧</text>
             <image style="width:44rpx;height:44rpx;display:block" src="/assets/image/enter.png"></image>

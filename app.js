@@ -32,6 +32,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    localhost: 'http://169.254.131.173:3000'
   }
 })
